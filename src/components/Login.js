@@ -7,9 +7,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../Utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Utils/userSlice";
+import { USERAVTAR } from "../Utils/constans";
 
 function Login() {
   const [isSignIn, setIsSignin] = useState(true);
@@ -19,7 +19,6 @@ function Login() {
   const email = useRef(null);
   const password = useRef(null);
 
-  const navigate = useNavigate();
   const toggleSignInForm = () => {
     setIsSignin(!isSignIn);
   };
@@ -44,8 +43,7 @@ function Login() {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://avatars.githubusercontent.com/u/61040769?s=96&v=4",
+            photoURL: USERAVTAR,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -57,19 +55,17 @@ function Login() {
                 photoURL: photoURL,
               };
               dispatch(addUser(userPayload));
-              navigate("/browser");
             })
             .catch((error) => {
+              console.log("Error:aaa", errorMessage); // Add this line for debugging
               setErrorMessage(error.message);
             });
-          console.log(user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + " " + errorMessage);
-          console.log(errorMessage);
+          console.log("Error:", errorMessage); // Add this line for debugging
           // ..
         });
     } else {
@@ -82,14 +78,12 @@ function Login() {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/browse");
-          console.log(user, "SUccessfully");
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + " " + errorMessage);
-          console.log(errorMessage);
+          console.log("Error:11111111111", errorMessage); // Add this line for debugging
         });
     }
   };
@@ -111,6 +105,7 @@ function Login() {
             ref={name}
             type="text"
             placeholder="FullName"
+            autoComplete="name"
             className="p-4 my-4 w-full bg-gray-500 "
           ></input>
         )}
@@ -118,12 +113,14 @@ function Login() {
           ref={email}
           type="email"
           placeholder="Email or Phone No"
+          autoComplete="email"
           className="p-4 my-4 w-full bg-gray-500 "
         ></input>
         <input
           ref={password}
           type="password"
           placeholder="Password"
+          autoComplete="current-password"
           className="p-4 my-4 w-full bg-gray-500"
         ></input>
         <p className="text-red-500 font-bold text-lg">{errorMessage}</p>
