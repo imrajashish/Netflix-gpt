@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 function SeconderyContainer() {
   const movies = useSelector((store) => store.movies);
+  console.log("*****", movies.popularMovies);
   return (
     movies.nowPlayingMovies && (
       <div className=" bg-black">
@@ -17,10 +18,7 @@ function SeconderyContainer() {
             title={"Trending Movies"}
             movies={movies.nowPlayingMovies}
           />
-          <MoviesList
-            title={"Popular Movies"}
-            movies={movies.nowPlayingMovies}
-          />
+          <MoviesList title={"Popular Movies"} movies={movies?.popularMovies} />
           <MoviesList
             title={"UpComing Movies"}
             movies={movies.nowPlayingMovies}
