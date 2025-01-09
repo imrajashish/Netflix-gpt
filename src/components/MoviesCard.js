@@ -1,5 +1,5 @@
 import React from "react";
-import { IMG_CDN_URL } from "../Utils/constans";
+import { IMG_CDN_URL } from "../Utils/constant";
 
 function MoviesCard({ posterPath }) {
   return (

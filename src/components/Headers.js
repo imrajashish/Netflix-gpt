@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../Utils/userSlice";
-import { LOGO } from "../Utils/constans";
+import { LOGO } from "../Utils/constant";
 
 function Headers() {
   const navigate = useNavigate();

@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
-import { API_OPTIONS } from "../Utils/constans";
+import { API_OPTIONS } from "../Utils/constant";
 import { useDispatch } from "react-redux";
 import { addUpcomingMovies } from "../Utils/moviesSlice";
 

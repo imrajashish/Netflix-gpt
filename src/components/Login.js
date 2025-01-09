@@ -9,7 +9,7 @@ import {
 import { auth } from "../Utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Utils/userSlice";
-import { BG_URL, USERAVTAR } from "../Utils/constans";
+import { BG_URL, USERAVTAR } from "../Utils/constant";
 
 function Login() {
   const [isSignIn, setIsSignin] = useState(true);
