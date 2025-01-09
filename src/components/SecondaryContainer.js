@@ -3,9 +3,8 @@ import MoviesList from "./MoviesList";
 
 import { useSelector } from "react-redux";
 
-function SeconderyContainer() {
+function SecondaryContainer() {
   const movies = useSelector((store) => store.movies);
-  console.log("*****", movies.popularMovies);
   return (
     movies.nowPlayingMovies && (
       <div className=" bg-black">
@@ -15,13 +14,13 @@ function SeconderyContainer() {
             movies={movies.nowPlayingMovies}
           />
           <MoviesList
-            title={"Trending Movies"}
-            movies={movies.nowPlayingMovies}
+            title={"Top Rating Movies"}
+            movies={movies.topRatingMovies}
           />
           <MoviesList title={"Popular Movies"} movies={movies?.popularMovies} />
           <MoviesList
             title={"UpComing Movies"}
-            movies={movies.nowPlayingMovies}
+            movies={movies.upcomingMovies}
           />
           <MoviesList
             title={"Horror Movies"}
@@ -33,4 +32,4 @@ function SeconderyContainer() {
   );
 }
 
-export default SeconderyContainer;
+export default SecondaryContainer;

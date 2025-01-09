@@ -65,8 +65,6 @@ function Login() {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + " " + errorMessage);
-          console.log("Error:", errorMessage); // Add this line for debugging
-          // ..
         });
     } else {
       //Sign In the
@@ -76,14 +74,13 @@ function Login() {
         password.current.value
       )
         .then((userCredential) => {
-          // Signed in
+          // Signed In
           const user = userCredential.user;
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          setErrorMessage(errorCode + " " + errorMessage);
-          console.log("Error:11111111111", errorMessage); // Add this line for debugging
+          setErrorMessage(errorCode + " " + errorMessage); // Add this line for debugging
         });
     }
   };
@@ -102,7 +99,7 @@ function Login() {
         </h1>
         {!isSignIn && (
           <input
-            ref={name}
+            //ref={name}
             type="text"
             placeholder="FullName"
             autoComplete="name"
@@ -131,7 +128,7 @@ function Login() {
           {isSignIn ? "Sign In" : "Sign Up"}
         </button>
         <p className="py-4" onClick={toggleSignInForm}>
-          New to Netflix? {isSignIn ? "Sign Up" : "Already register Sigin "}Now
+          New to Netflix? {isSignIn ? "Sign Up" : "Already register Sign In"}Now
         </p>
       </form>
     </div>

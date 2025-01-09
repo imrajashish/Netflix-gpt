@@ -6,7 +6,7 @@ import { addNowPlayingMovies } from "../Utils/moviesSlice";
 const useNowPlayingMovies = () => {
   const dispatch = useDispatch();
 
-  const getNowplaying = async () => {
+  const getNowPlaying = async () => {
     const data = await fetch(
       "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
       API_OPTIONS
@@ -14,8 +14,9 @@ const useNowPlayingMovies = () => {
     const json = await data.json();
     dispatch(addNowPlayingMovies(json.results));
   };
+
   useEffect(() => {
-    getNowplaying();
+    getNowPlaying();
   }, []);
 };
 
