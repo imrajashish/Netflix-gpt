@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Login";
 import Browse from "./Browse";
+import GptSearch from "./GptSearch";
 function Body() {
   const appRouter = createBrowserRouter([
     {
@@ -11,6 +12,10 @@ function Body() {
     {
       path: "/browse",
       element: <Browse />,
+    },
+    {
+      path: "/GptSearch",
+      element: <GptSearch />,
     },
   ]);
 

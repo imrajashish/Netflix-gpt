@@ -14,3 +14,30 @@ export const API_OPTIONS = {
   },
 };
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w780";
+
+export const SUPPORTED_LANG = [
+  { identifier: "en", name: "English" }, // Widely used as a second language
+  { identifier: "hindi", name: "Hindi" }, // Most spoken language in India
+  { identifier: "bengali", name: "Bengali" },
+  { identifier: "telugu", name: "Telugu" },
+  { identifier: "marathi", name: "Marathi" },
+  { identifier: "tamil", name: "Tamil" },
+  { identifier: "urdu", name: "Urdu" },
+  { identifier: "gujarati", name: "Gujarati" },
+  { identifier: "malayalam", name: "Malayalam" },
+  { identifier: "kannada", name: "Kannada" },
+  { identifier: "odia", name: "Odia" },
+  { identifier: "punjabi", name: "Punjabi" },
+  { identifier: "assamese", name: "Assamese" },
+  { identifier: "maithili", name: "Maithili" },
+  { identifier: "santali", name: "Santali" },
+  { identifier: "bhojpuri", name: "Bhojpuri" }, 
+  { identifier: "rajasthani", name: "Rajasthani" }, 
+  { identifier: "nepali", name: "Nepali" },
+  { identifier: "sindhi", name: "Sindhi" },
+  { identifier: "dogri", name: "Dogri" },
+  { identifier: "konkani", name: "Konkani" },
+  { identifier: "manipuri", name: "Manipuri (Meitei)" },
+  { identifier: "bodo", name: "Bodo" },
+  { identifier: "sanskrit", name: "Sanskrit" } 
+];

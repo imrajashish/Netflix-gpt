@@ -47,7 +47,6 @@ function Login() {
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
-              console.log("displayName");
               const userPayload = {
                 uid: uid,
                 email: email,
@@ -57,7 +56,6 @@ function Login() {
               dispatch(addUser(userPayload));
             })
             .catch((error) => {
-              console.log("Error:aaa", errorMessage); // Add this line for debugging
               setErrorMessage(error.message);
             });
         })
